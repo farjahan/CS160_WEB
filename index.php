@@ -4,7 +4,8 @@
         <title>Register</title>
         <link rel="stylesheet" type="text/css" href="style/reset.css">
         <link rel="stylesheet" type="text/css" href="style/mystyle.css">
-
+        <script type="text/javascript" src="script/jquery2.1.1.js" ></script>
+        <script type="text/javascript" src="script/main.js"></script>
     </head>
     <body>
         <div id="outter"> 
@@ -25,32 +26,32 @@
                         Create you account
                     </div>
                     <div id="register">
-                        <!-- This is a form for register a new accont -->
-                        <form method="POST" name="inputform" action="">
+                        <!-- This is a form for register a new account -->
+                        <form method="POST" name="inputform" action="process.php">
                             <!-- First Name -->
                             <div>
-                                <input type="text" id="fname" class="rinput" placeholder="First Name"/>
+                                <input type="text" name="fname" id="fname" class="rinput" placeholder="First Name"/>
                                 <!-- Last Name -->
-                                <input type="text" id="lname" class="rinput" placeholder="Last Name"/>
+                                <input type="text" name="lname" id="lname" class="rinput" placeholder="Last Name"/>
                             </div>
                             <!-- Email Address -->
                             <div>
-                                <input type="text" id="email" class="rinput" placeholder="Email Address"/>
+                                <input type="text" name="email" id="email" class="rinput" placeholder="Email Address"/>
                             </div>
                             <!-- Password -->
                             <div>
-                                <input type="password" id="password" class="rinput" placeholder="Password"/>
+                                <input type="password" name="password" id="password" class="rinput" placeholder="Password"/>
                             </div>
-                            <!-- Comfirm Password -->
+                            <!-- Confirm Password -->
                             <div>
-                                <input type="password" id="cpassword" class="rinput" placeholder="Re-enter Password"/>
+                                <input type="password" name="cpassword" id="cpassword" class="rinput" placeholder="Re-enter Password"/>
                             </div>
-                            <div> 
+<!--                            <div> 
                                 <input type="pin" id="pin" class="rinput" placeholder="4 Digit PIN number" maxlength="4"/>
-                            </div>
+                            </div>-->
                             <!-- Create new account button -->
                             <div id="butt">
-                                <input type="submit" class="createacc" value="Create Account"/>
+                                <input type="submit" name="submit" class="createacc" value="Create Account"/>
                             </div>
                         </form>
                     </div>
