@@ -21,7 +21,7 @@
     margin-top: 10px;
 }
 
-#register .rinput
+.rinput
 {
     width: 300px;
     height: 45px;
@@ -74,7 +74,7 @@ input.createacc
 }
 #logintitle
 {
-    
+
     width: 350px;
     margin: 0 auto;
     text-align: center;
@@ -123,7 +123,7 @@ p.ord
 }
 #or
 {
-    
+
     font-size: 24px
 }
 #top
@@ -232,4 +232,11 @@ div.left
     text-align: center;
     color:green;
     padding: 10px 0px 10px 0px;
+}
+
+table,th, td {
+    border: 1px solid black;
+}
+h1{
+    font-size: 50px;
 }

@@ -28,4 +28,6 @@ $(document).ready(function () {
             $(".passwarning").css("color", "red");
         }
     });
+    $("#maintable").DataTable();
+    $(".dateinput").datepicker();
 });
