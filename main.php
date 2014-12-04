@@ -13,13 +13,13 @@
         <table id="maintable"  class="display" cellspacing="0" width="100%"> 
             <thead>
                 <tr> 
-                    <th>Select</th> 
+                  
                     <th>File Name</th>
                     <th>Expiration Date</th>
                     <th>Favorite</th>
                     <th>Comment</th>
                     <th>Upload Date</th>
-                    <th>Download</th>
+                   
                 </tr>
             </thead>
             <tbody> 
@@ -71,8 +71,7 @@
             </tbody>
         </table>
         <button type="button" name="upload">Upload New Document</button> 
-        <button type="button" name="edit">Edit Document</button> 
-        <button type="button" name="Archive">Archive</button>
+    
 
 
 
