@@ -13,68 +13,52 @@
         <table id="maintable"  class="display" cellspacing="0" width="100%"> 
             <thead>
                 <tr> 
-                  
-                    <th>File Name</th>
-                    <th>Expiration Date</th>
-                    <th>Favorite</th>
-                    <th>Comment</th>
-                    <th>Upload Date</th>
+
+
+
+<?php
+include 'include/connect.php';
+
+$sql = 'SELECT * from documents';
+?>
+
+                   <th> ID </th>
+                    <th> File Name</th>
+                    <th> Expiration Date</th>
+                    <th> Comments</th>
+                    <th> Upload Time</th>
+                    <th> File Path</th>
                    
                 </tr>
             </thead>
-            <tbody> 
-                <tr>
-                    <td>test</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
+<?php
+foreach ( $dbh->query ( $sql ) as $row ) {
+	
+	echo "<tbody>"; 
+             echo "   <tr>";
+           //  echo "<td> <a href='". $row ['filePath'] . "'>View file</a> </td>";
+            // echo "<td> <a href= readfile.php?filePath='".$row ['filePath']."'>View file</a> </td>";
+                   
+            
+	
+	echo "<td>" . $row ['did'] . "</td>";
+	echo "<td>" . $row ['filename'] . "</td>";
+	echo "<td>" . $row ['expdate'] . "</td>";
+	echo "<td> " . $row ['comment'] . "</td>";
+	echo "<td>" . $row ['uploadTime'] . "</td>";
+	echo "<td> <a href= readfile.php?filePath=".$row ['filePath'].">View file</a> </td>";
+	//echo "<td> <a href= checkuserForm.php?filePath=".$row ['filePath'].">View file</a> </td>";
+   // header( "refresh: 5; url= readfile.php" );
+	echo " </tr>";
+}
+
+?>
+
+
+
+ </tbody>
         </table>
         <button type="button" name="upload">Upload New Document</button> 
-    
-
-
-
         <!--Javascript At the buttom for speed-->
         <script type="text/javascript" src="script/jquery2.1.1.js" ></script> 
         <script type="text/javascript" src="DataTables/media/js/jquery.dataTables.js"></script>

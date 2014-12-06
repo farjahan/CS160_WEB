@@ -8,15 +8,16 @@
         <link rel="stylesheet" type="text/css" href="style/mystyle.css"> 
     </head>
     <body>
+ 
         <h1>Upload New Document</h1> 
-        <form action=""> 
+      <form action="insert_product.php" method="POST" enctype="multipart/form-data">
              
-            <input type="text" id="filename" class="rinput" placeholder="File Name" required/> <br/>
-             <input type="text" id="expdate" class="rinput dateinput" name="expdate" placeholder="Expiration Date"/> <br/>
+            <input type="text" id="filename" name="filename"  class="rinput" placeholder="File Name" required/> <br/>
+             <input type="text" id="expdate" name ="expdate" class="rinput dateinput" name="expdate" placeholder="Exp Date: 2014-12-31"/> <br/>
    
-             <textarea class="rinput comment" name="comment" placeholder="Comment"></textarea> <br/>
-             <input type="file" name="uploadfile" id="uploadfile" class="uploadfile" value="Upload File" accept="image/*, .pdf"/><br/><br/>
-             <input type="submit" name="submit" id="submit" value="Upload"/>
+             <textarea class="rinput comment"  id="comment" name="comment" placeholder="Comment"></textarea> <br/>
+             <input type="file"  id="uploadfile" name="uploadfile" class="uploadfile"/><br/><br/>
+             <input type="submit" id="submit" name="submit"  value="Upload"/>
         </form> 
         
         
