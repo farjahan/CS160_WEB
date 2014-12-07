@@ -15,7 +15,7 @@
                     <a class="headlink" href="">Main</a>
                 </div>
                 <div id="rightheader">
-                    <a class="headlink" href="signin.php"> Sign In </a>
+                    <a class="headlink" href="signin.html"> Sign In </a>
                 </div>
             </div>
             <div id="container"> 
@@ -46,7 +46,8 @@
                                 <input type="password" name="cpassword" id="cpassword" class="rinput" placeholder="Re-enter Password" required/>
                             </div>
                             <div> 
-                                <p class="passwarning"></p> 
+                                <p class="passwarning"></p>
+                                <p class="emailwarning"></p>
                             </div> 
                             <!--                            <div> 
                                                             <input type="pin" id="pin" class="rinput" placeholder="4 Digit PIN number" maxlength="4"/>
