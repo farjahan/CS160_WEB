@@ -9,13 +9,13 @@
         <div id="outter"> 
             <div id="top">
                 <div id="leftheader">
-                    <a class="headlink" href="">PVault</a>
+                    <a class="headlink" href="index.php">PVault</a>
                 </div>
                 <div id="secondleftheader">
-                    <a class="headlink" href="">Main</a>
+                    <a class="headlink" href="index.php">Main</a>
                 </div>
                 <div id="rightheader">
-                    <a class="headlink" href="signin.html"> Sign In </a>
+                    <a class="headlink" href="signin.php"> Sign In </a>
                 </div>
             </div>
             <div id="container"> 
@@ -26,7 +26,7 @@
                     <div id="register">
                         <div class=""
                         <!-- This is a form for register a new account -->
-                        <form method="POST" id="registerform" name="inputform" action="process.php" >
+                        <form method="POST" id="registerform" name="inputform" action="/" >
                             <!-- First Name -->
                             <div>
                                 <input type="text" name="fname" id="fname" class="rinput" placeholder="First Name" required/>
@@ -46,20 +46,19 @@
                                 <input type="password" name="cpassword" id="cpassword" class="rinput" placeholder="Re-enter Password" required/>
                             </div>
                             <div> 
-                                <p class="passwarning"></p>
-                                <p class="emailwarning"></p>
+                                <p class="passwarning" style="color: RED;"></p>
+                                <p class="emailwarning" style="color: RED;"></p>
                             </div> 
-                            <!--                            <div> 
-                                                            <input type="pin" id="pin" class="rinput" placeholder="4 Digit PIN number" maxlength="4"/>
-                                                        </div>-->
-                            <!-- Create new account button -->
+                         
                             <div id="butt">
                                 <input type="submit" name="submit" class="createacc" value="Create Account"/>
                             </div>
                         </form>
+                        <div class="forgot"><a href="forgot.php"> Forgot password?</a> </div>
                     </div>
                 </div>
                 <div id="centerline">
+                    
                     <div id="tline"> 
                     </div>
                     <div class="ord"> <p class="ord">or</p> </div>

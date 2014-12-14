@@ -13,7 +13,7 @@
       <form action="insert_product.php" method="POST" enctype="multipart/form-data">
              
             <input type="text" id="filename" name="filename"  class="rinput" placeholder="File Name" required/> <br/>
-             <input type="text" id="expdate" name ="expdate" class="rinput dateinput" name="expdate" placeholder="Exp Date: 2014-12-31"/> <br/>
+             <input type="text" id="expdate" name ="expdate" class="rinput dateinput" name="expdate" placeholder="Exp Date"/> <br/>
    
              <textarea class="rinput comment"  id="comment" name="comment" placeholder="Comment"></textarea> <br/>
              <input type="file"  id="uploadfile" name="uploadfile" class="uploadfile"/><br/><br/>

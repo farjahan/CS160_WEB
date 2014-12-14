@@ -1,25 +1,23 @@
-
-<<<<<<< Updated upstream
 <?php
-  $user = "root";
-  $pass = "password";
-=======
-$conn = new mysqli($server, $username, $pass, $database);
-if ($conn->connect_error)
-{
+
+define("MAX_LENGTH", 6);
+$server = "localhost";
+$dbusername = "root";
+$dbpass = "mysql";
+$database = "PVault";
+date_default_timezone_set('America/Los_Angeles');
+
+$conn = new mysqli($server, $dbusername, $dbpass, $database);
+if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$hash = md5(uniqid(rand(), true));
 
-
-// NEED TO BE ADDED LATER
-$baseurl = "";
->>>>>>> Stashed changes
-
-        $dbh = new PDO('mysql:host=localhost;dbname=PVault', $user, $pass, array(
-            PDO::ATTR_PERSISTENT => true
-        ));
+try {
+    $dbh = new PDO("mysql:host=$server;dbname=$database", $dbusername, $dbpass);
+    // set the PDO error mode to exception
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 ?>
-        
-
         

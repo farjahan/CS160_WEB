@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SERVER ["REQUEST_METHOD"] == "POST") {
 	include 'include/connect.php';
 	$filename = $_POST ["filename"];
@@ -8,7 +9,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST") {
 	
 	$comment = $_POST ["comment"];
 	//please change pathinfo
-	$target_dir = "C:/wamp/www/storage/";
+	$target_dir = "documents/";
 	$filePath = $target_dir . basename ( $_FILES ["uploadfile"] ["name"] );
 	$uploadOk = 1;
 	echo "$filePath";
@@ -17,7 +18,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST") {
 		$uploadOk = 0;
 	}
 	// Check file size
-	if ($_FILES ["uploadfile"] ["size"] > 500000) {
+	if ($_FILES ["uploadfile"] ["size"] > 10000000) {
 		echo "Sorry, your file is too large.";
 		$uploadOk = 0;
 	}
@@ -33,19 +34,18 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST") {
 		} else {
 			echo "Sorry, there was an error uploading your file.";
 		}
-	}
-	echo "New records created successfully";
+        }
 	date_default_timezone_set ( "America/Los_Angeles" );
 	$t = time ();
 	$uploadTime = (date ( "Y-m-d H:i:s", $t ));
-	
-	$stmt = $dbh->prepare ( "INSERT INTO documents (filename,expdate,comment,uploadTime,filePath) VALUES (?,?,?,?,?)" );
-
-	$stmt->bindParam ( 1, $filename );
-	$stmt->bindParam ( 2, $expdate );
-	$stmt->bindParam ( 3, $comment );
-	$stmt->bindParam ( 4, $uploadTime );
-	$stmt->bindParam ( 5, $filePath );
+	$uid = $_SESSION['uid'];
+	$stmt = $dbh->prepare ( "INSERT INTO documents (uid, filename,expdate,comment,uploadTime,filePath) VALUES (?,?,?,?,?,?)" );
+        $stmt->bindParam ( 1, $uid);
+	$stmt->bindParam ( 2, $filename );
+	$stmt->bindParam ( 3, $expdate );
+	$stmt->bindParam ( 4, $comment );
+	$stmt->bindParam ( 5, $uploadTime );
+	$stmt->bindParam ( 6, $filePath );
 	$stmt->execute ();
 	
 }

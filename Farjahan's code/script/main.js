@@ -29,5 +29,4 @@ $(document).ready(function () {
         }
     });
     $("#maintable").DataTable();
-    $(".dateinput").datepicker();
 });
